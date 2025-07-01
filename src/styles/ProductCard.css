@@ -1,0 +1,25 @@
+.product-card {
+    background-color: var(--verde-claro);
+    border: none;
+    box-shadow: 0 4px 10px rgba(129, 154, 145, 0.2);
+  }
+  
+  .product-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(129, 154, 145, 0.3);
+  }
+  
+  .product-img {
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--verde-medio);
+  }
+  .btn-success {
+    background-color: var(--verde-medio);
+    border-color: var(--verde-oscuro);
+  }
+  
+  .btn-success:hover {
+    background-color: var(--verde-oscuro);
+  }
+  

@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Monstera Deliciosa",
+      "description": "Planta tropical de interior con hojas grandes.",
+      "price": 1200,
+      "image": "/images/monstera_deliciosa.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Lavanda",
+      "description": "Aromática y decorativa, ideal para exteriores soleados.",
+      "price": 1500,
+      "image": "/images/lavender.jpg"
+    }
+  ]
+}

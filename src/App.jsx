@@ -1,0 +1,34 @@
+// src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import ProductDetail from './pages/ProductDetail';
+import Us from './pages/Us';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import { CartProvider } from './context/CartContext';
+
+function App() {
+  return (
+    <CartProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:category" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/us" element={<Us />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
+    </CartProvider>
+  );
+}
+
+export default App;
