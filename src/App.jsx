@@ -10,22 +10,28 @@ import Us from './pages/Us';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import { CartProvider } from './context/CartContext';
+import './styles/navbar.css';
+
+// Importar estilos
+import './styles/navbar.css';
 
 function App() {
   return (
     <CartProvider>
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:category" element={<Products />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/us" element={<Us />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+        <div className="container mt-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:category" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/us" element={<Us />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
       </Router>
     </CartProvider>
   );

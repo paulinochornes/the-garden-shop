@@ -1,5 +1,6 @@
 // src/pages/Us.jsx
 import React from 'react';
+import Footer from '../components/Footer';
 
 function Us() {
   return (
@@ -17,6 +18,7 @@ function Us() {
       <p>
         Gracias por visitarnos y ser parte de este sueño verde. 🌱
       </p>
+      <Footer />
     </div>
   );
 }

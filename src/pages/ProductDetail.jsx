@@ -1,8 +1,8 @@
-// src/pages/ProductDetail.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import productsData from '../data/products.json';
 import { useCart } from '../context/CartContext';
+import Footer from '../components/Footer';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -24,6 +24,7 @@ function ProductDetail() {
       <button onClick={() => addToCart(product)} style={{ marginTop: '1rem' }}>
         Agregar al carrito
       </button>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Link to="/products" className="btn btn-success">
         Ver productos
       </Link>
+      <Footer />
     </div>
   );
 }

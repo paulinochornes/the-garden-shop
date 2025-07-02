@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import productsData from '../data/products.json';
+import Footer from '../components/Footer';
 
 function Products() {
   const location = useLocation();
@@ -40,6 +41,7 @@ function Products() {
           <ProductCard key={product.id} product={product} />
         ))
       )}
+            <Footer />
     </div>
   );
 }
