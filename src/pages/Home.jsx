@@ -1,64 +1,97 @@
-import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import ProductCard from '../components/ProductCard';
-import productData from '../data/products.json';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+import heroImage from "../assets/hero.png";
+import productData from "../data/products.json";
+import ProductCard from "../components/ProductCard";
 
 function Home() {
-  const destacados = productData.products.filter(p =>
-    [
-      "pexels-fadime-demirtas-42037863-13549394.jpg",
-      "pexels-beyzaa-yurtkuran-279977530-17604666.jpg",
-      "pexels-sasha-kim-9412433.jpg"
-    ].includes(p.imagen)
-  );
-
-  const carouselItems = productData.products.filter(p =>
-    [
-      "pexels-anete-lusina-5722936.jpg",
-      "pexels-jardindeneko-19758422.jpg",
-      "pexels-vovaflame-3126442.jpg"
-    ].includes(p.imagen)
-  );
+  const destacados = productData.products.slice(0, 3);
+  const populares = productData.products.slice(3, 6);
 
   return (
-    <div className="container mt-4">
-      {/* Hero Section */}
-      <div className="text-center mb-4">
+    <>
+      {/* Portada */}
+      <section style={{ position: 'relative', height: '60vh', overflow: 'hidden' }}>
         <img
-          src="/images/hero.png"
-          alt="The Garden Shop"
-          className="img-fluid rounded shadow"
+          src={heroImage}
+          alt="The Garden Shop portada"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
-      </div>
+        <div
+          className="position-absolute top-50 start-50 translate-middle text-center text-white"
+          style={{ textShadow: '0 0 8px rgba(0,0,0,0.6)' }}
+        >
+          <h1 className="display-4 fw-bold">Bienvenido a The Garden Shop</h1>
+          <p className="lead">Tu rincón verde para conectar con la naturaleza</p>
+        </div>
+      </section>
 
-      {/* Carousel */}
-      <Carousel className="mb-5">
-        {carouselItems.map((product, index) => (
-          <Carousel.Item key={index}>
-            <img
-              className="d-block w-100"
-              src={`/images/${product.imagen}`}
-              alt={product.nombre}
-              style={{ maxHeight: '500px', objectFit: 'cover' }}
-            />
-            <Carousel.Caption className="bg-dark bg-opacity-50 p-2 rounded">
-              <h5>{product.nombre}</h5>
-              <p>{product.descripcion}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      {/* Carrusel de artículos */}
+      <section className="container my-5">
+        <h2 className="text-center mb-4">Artículos destacados</h2>
 
-      {/* Productos Destacados */}
-      <h2 className="mb-3">Promociones destacadas</h2>
-      <div className="row">
-        {destacados.map((product, index) => (
-          <div className="col-md-4 mb-4" key={index}>
-            <ProductCard product={product} />
+        <div id="articlesCarousel" className="carousel slide" data-bs-ride="carousel">
+          <div className="carousel-inner rounded shadow">
+            {destacados.map((producto, index) => (
+              <div
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
+                key={producto.id || index}
+              >
+                <img
+                  src={`/images/${producto.imagen}`}
+                  className="d-block w-100"
+                  alt={producto.nombre}
+                  style={{ maxHeight: "500px", objectFit: "cover" }}
+                />
+                <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                  <h5>{producto.nombre}</h5>
+                  <p>{producto.descripcion}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#articlesCarousel"
+            data-bs-slide="prev"
+          >
+            <span className="carousel-control-prev-icon" />
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#articlesCarousel"
+            data-bs-slide="next"
+          >
+            <span className="carousel-control-next-icon" />
+          </button>
+        </div>
+      </section>
+
+      {/* Sección de productos */}
+      <section className="container my-5">
+        <h2 className="text-center mb-4">Productos populares</h2>
+        <div className="row g-4">
+          {populares.map((producto) => (
+            <div className="col-md-4" key={producto.id}>
+              <ProductCard producto={producto} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Sección de promociones */}
+      <section className="py-5 text-white" style={{ backgroundColor: '#a7c1a8' }}>
+        <div className="container text-center">
+          <h2 className="mb-3">¡Promociones de temporada!</h2>
+          <p className="lead">Descubrí descuentos exclusivos en plantas, macetas y kits de jardinería.</p>
+          <a href="/products" className="btn btn-light btn-lg mt-3">Ver productos</a>
+        </div>
+      </section>
+    </>
   );
 }
 

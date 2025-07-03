@@ -1,368 +1,493 @@
 {
   "products": [
     {
+       "id": 1,
         "nombre": "Ramo Primavera",
         "descripcion": "Ramo de flores mixtas con rosas blancas, claveles rosados y gypsophila en canasta natural.",
-        "categoria": "ramos",
+        "categoria": "ramos", 
+        "precio": 890,
         "imagen": "pexels-anete-lusina-5722936.jpg"
+       
     },
     {
+      "id": 2,
         "nombre": "Calathea Orbifolia",
         "descripcion": "Planta de interior de hojas grandes y rayadas, ideal para espacios con luz indirecta.",
         "categoria": "plantas interior",
+        "precio": 990,
         "imagen": "pexels-aysenurhamra-68268085-15433798.jpg"
     },
     {
+      "id": 3,
         "nombre": "Ave del Paraíso",
         "descripcion": "Planta tropical con hojas grandes, perfecta para interiores con luz brillante.",
         "categoria": "plantas interior",
+        "precio": 1090,
         "imagen": "pexels-bayram-yalcin-86843184-13606721.jpg"
     },
     {
+      "id": 4,
         "nombre": "Set Bonsai Sostenible",
         "descripcion": "Mini árboles en maceta compostable, ideales para regalar y promover la conciencia ambiental.",
         "categoria": "plantas interior",
+        "precio": 1890,
         "imagen": "pexels-beyzaa-yurtkuran-279977530-17604666.jpg"
     },
     {
+      "id": 5,
         "nombre": "Col ornamental morada",
         "descripcion": "Planta decorativa resistente al frío, con hojas rizadas en tonos violetas.",
         "categoria": "plantas exterior",
+        "precio": 590,
         "imagen": "pexels-ceyda-eser-30987506-13381744.jpg"
     },
     {
+      "id": 6,
         "nombre": "Romero Aromático",
         "descripcion": "Hierba aromática en maceta blanca, perfecta para cocinar o decorar tu cocina.",
         "categoria": "aromáticas",
+        "precio": 690,
         "imagen": "pexels-chris-f-38966-2417533.jpg"
     },
     {
+      "id": 7,
         "nombre": "Palmera Areca",
         "descripcion": "Elegante palmera de interior en maceta negra, excelente para purificar el aire.",
         "categoria": "plantas interior",
+        "precio": 1890,
         "imagen": "pexels-cottonbro-4068314.jpg"
     },
     {
+      "id": 8,
         "nombre": "Ficus robusta",
         "descripcion": "Planta robusta de hojas verdes oscuras, muy fácil de cuidar y elegante.",
         "categoria": "plantas interior",
+        "precio": 390,
         "imagen": "pexels-cottonbro-4505164.jpg"
     },
     {
+      "id": 9,
         "nombre": "Rosa mini en maceta",
         "descripcion": "Pequeñas rosas rosadas perfectas para decorar interiores o regalar.",
         "categoria": "flores",
+        "precio": 390,
         "imagen": "pexels-cottonbro-4505447.jpg"
     },
     {
+      "id": 10,
         "nombre": "Calathea Medallion",
         "descripcion": "Planta de hojas estampadas con patrón único, ideal para decoración interior.",
         "categoria": "plantas interior",
+        "precio": 2890,
         "imagen": "pexels-cottonbro-9707067.jpg"
     },
     {
+      "id": 11,
         "nombre": "Kalanchoe morado",
         "descripcion": "Suculenta decorativa con flores violetas, resistente y de bajo mantenimiento.",
         "categoria": "suculentas",
+        "precio": 890,
         "imagen": "pexels-cristian-rojas-8784686.jpg"
     },
     {
+      "id": 12,
         "nombre": "Crassula Ovata (Jade)",
         "descripcion": "Planta suculenta que atrae la prosperidad, muy fácil de cuidar.",
         "categoria": "suculentas",
+        "precio": 990,
         "imagen": "pexels-cup-of-couple-8472105.jpg"
     },
     {
+      "id": 13,
         "nombre": "Mini Garden Mix",
         "descripcion": "Surtido de plantas pequeñas: suculentas, aromáticas y florales en macetas diversas.",
         "categoria": "varios",
+        "precio": 890,
         "imagen": "pexels-damir-17075186.jpg"
     },
     {
+      "id": 14,
         "nombre": "Helecho de Interior",
         "descripcion": "Helecho verde en maceta de barro, ideal para decorar ambientes con sombra.",
         "categoria": "plantas interior",
+        "precio": 1290,
         "imagen": "pexels-dannaputra-32173675.jpg"
     },
     {
+      "id": 15,
         "nombre": "Suculentas variadas",
         "descripcion": "Colección de suculentas en colores pastel y verdes, para interiores o balcones.",
         "categoria": "suculentas",
+        "precio": 590,
         "imagen": "pexels-drewdempsey-28753971.jpg"
     },
     {
+      "id": 16,
         "nombre": "Helecho Boston",
         "descripcion": "Planta colgante de interior, excelente para ambientes húmedos como baños.",
         "categoria": "plantas interior",
+        "precio": 490,
         "imagen": "pexels-ekaterina-bolovtsova-9130800.jpg"
     },
     {
+      "id": 17,
         "nombre": "Sansevieria Cylindrica",
         "descripcion": "Planta de hojas erguidas y aspecto moderno, muy resistente.",
         "categoria": "plantas interior",
-        "imagen": "pexels-elina-sazonova-4555280.jpg"},
+        "precio": 1390,
+        "imagen": "pexels-elina-sazonova-4555280.jpg"
+      },
+
         {
+          "id": 18,
           "nombre": "Sansevieria Zeylanica",
           "descripcion": "Esta planta de hojas verticales y puntiagudas es resistente y de fácil mantenimiento. Ideal para interiores con poca luz y excelente purificadora del aire.",
           "categoria": "plantas interior",
+          "precio": 990,
           "imagen": "pexels-elina-sazonova-4555280.jpg"
       },
       {
+        "id": 19,
         "nombre": "Sansevieria Zeylanica",
         "descripcion": "Esta planta de hojas verticales y puntiagudas es resistente y de fácil mantenimiento. Ideal para interiores con poca luz y excelente purificadora del aire.",
         "categoria": "plantas interior",
+        "precio": 590,
         "imagen": "pexels-elina-sazonova-4555280.jpg"
     },
       {
+        "id": 20,
         "nombre": "Echeveria Perla Negra",
         "descripcion": "Variedad de echeveria con hojas oscuras y carnosas, ideal para combinar con otras suculentas en arreglos minimalistas.",
         "categoria": "suculentas",
+        "precio": 890,
         "imagen": "pexels-fadime-demirtas-42037863-13549394.jpg"
       },
       {
+        "id": 21,
         "nombre": "Cactus Globo",
         "descripcion": "Pequeño cactus de forma redondeada, fácil de cuidar. Perfecto para escritorios o balcones soleados.",
         "categoria": "cactus",
+        "precio": 690,
         "imagen": "pexels-fotios-photos-6052724.jpg"
       },
       {
+        "id": 22,
         "nombre": "Suculenta Echeveria Rosa",
         "descripcion": "Echeveria de tonos rosados con hojas gruesas y dispuestas en roseta. Aporta un toque suave y decorativo.",
         "categoria": "suculentas",
+        "precio": 690,
         "imagen": "pexels-fotios-photos-7026638.jpg"
       },
       {
+        "id": 23,
         "nombre": "Planta Araña (Chlorophytum)",
         "descripcion": "Planta colgante de interior con hojas verdes y blancas. Muy resistente y de crecimiento rápido.",
         "categoria": "plantas interior",
+        "precio": 1590,
         "imagen": "pexels-ginny9119-7534638.jpg"
       },
       {
+        "id": 24,
         "nombre": "Kalanchoe Naranja",
         "descripcion": "Suculenta de hojas verdes gruesas con flores naranjas brillantes. Muy decorativa y alegre.",
         "categoria": "suculentas",
+        "precio": 890,
         "imagen": "pexels-greta-hoffman-7728872.jpg"
       },
       {
+        "id": 25,
         "nombre": "Pilea Peperomioides",
         "descripcion": "Planta de monedas chinas, muy popular por sus hojas redondas. Perfecta para interiores modernos.",
         "categoria": "plantas interior",
+        "precio": 690,
         "imagen": "pexels-jardindeneko-19758422.jpg"
       },
       {
+        "id": 26,
         "nombre": "Cactus Oreja de Conejo",
         "descripcion": "Cactus simpático con forma de orejas planas, cubierto de espinas suaves. Ideal para macetas decorativas.",
         "categoria": "cactus",
+        "precio": 790,
         "imagen": "pexels-jill-burrow-6070380.jpg"
       },
       {
+        "id": 27,
         "nombre": "Ficus Elástica",
         "descripcion": "Planta de interior elegante con hojas grandes, verdes oscuras y brillantes. Requiere luz media.",
         "categoria": "plantas interior",
+        "precio": 890,
         "imagen": "pexels-jillyjillystudio-30636358.jpg"
       },
       {
+        "id": 28,
         "nombre": "Cactus Coral",
         "descripcion": "Cactus ramificado con aspecto decorativo, ideal para combinar en jardines xerófilos.",
         "categoria": "cactus",
+        "precio": 1190,
         "imagen": "pexels-julia-volk-5272964.jpg"
       },
       {
+        "id": 29,
         "nombre": "Helecho Cuerno de Alce",
         "descripcion": "Planta epífita de hojas curiosas en forma de cuernos. Perfecta para colgar en interiores luminosos.",
         "categoria": "plantas interior",
+        "precio": 2890,
         "imagen": "pexels-kerimenur-dogan-61077235-8040130.jpg"
       },
         {
+          "id": 30,
           "nombre": "Monstera Deliciosa",
           "descripcion": "Planta tropical muy decorativa por sus hojas grandes con cortes naturales. Necesita luz indirecta y humedad.",
           "categoria": "plantas interior",
+          "precio": 1490,
           "imagen": "pexels-konevi-5091486.jpg"
         },
         {
+          "id": 31,
           "nombre": "Bonsái Olmo Chino",
           "descripcion": "Mini árbol de interior ideal para iniciarse en el arte del bonsái. Estético y fácil de cuidar.",
           "categoria": "bonsai",
+          "precio": 2490,
           "imagen": "pexels-lazarus-ziridis-351891426-32640851.jpg"
         },
         {
+          "id": 32,
           "nombre": "Cactus en Maceta de Barro",
           "descripcion": "Pequeño cactus esférico en maceta rústica. Ideal para decoración natural.",
           "categoria": "cactus",
+          "precio": 990,
           "imagen": "pexels-liana-horodetska-5077625-7524975.jpg"
         },
         {
+          "id": 33,
           "nombre": "Helecho Asplenium",
           "descripcion": "Planta de hojas onduladas en forma de lanza. Requiere humedad y sombra.",
           "categoria": "plantas interior",
+          "precio": 690,
           "imagen": "pexels-nc-farm-bureau-mark-19289051.jpg"
         },
         {
+          "id": 34,
           "nombre": "Cactus Espiral",
           "descripcion": "Cactus de forma espiralada única. Muy ornamental y llamativo.",
           "categoria": "cactus",
+          "precio": 890,
           "imagen": "pexels-orlovamaria-4947394.jpg"
         },
         {
+          "id": 35,
           "nombre": "Aloe Vera",
           "descripcion": "Planta medicinal conocida por sus propiedades regenerativas. Ideal para interiores y balcones.",
-          "categoria": "plantas medicinales",
+          "categoria": "plantas medicinales", 
+          "precio": 390,
           "imagen": "pexels-piotr-arnoldes-7862031-6794610.jpg"
         },
         {
+          "id": 36,
           "nombre": "Cactus Bola con Flores",
           "descripcion": "Cactus esférico decorado con pequeñas flores, ideal para macetas coloridas.",
           "categoria": "cactus",
+          "precio": 890,
           "imagen": "pexels-plantsandgraphics-7252784.jpg"
         },
         {
+          "id": 37,
           "nombre": "Anturio Rojo",
           "descripcion": "Planta de interior con hojas verdes brillantes y flores rojas en forma de corazón.",
-          "categoria": "plantas con flor",
+          "categoria": "plantas con flor",  
+          "precio": 890,
           "imagen": "pexels-quang-nguyen-vinh-222549-2138073.jpg"
         },
         {
+          "id": 38,
           "nombre": "Lavanda",
           "descripcion": "Planta aromática de hojas plateadas y flores lilas. Ideal para jardín o macetas.",
           "categoria": "aromáticas",
+          "precio": 890,
           "imagen": "pexels-rahimegul-27565259.jpg"
         },
         {
+          "id": 39,
           "nombre": "Peperomia Argyreia",
           "descripcion": "Planta de hojas redondeadas con vetas en forma de sandía. Compacta y perfecta para interiores.",
           "categoria": "plantas interior",
+          "precio": 990,
           "imagen": "pexels-roman-odintsov-8189090.jpg"
         },     
         {
+          "id": 40,
             "nombre": "Fitonia Verde",
             "descripcion": "Planta de hojas pequeñas con vetas decorativas. Ideal para terrarios o zonas húmedas.",
             "categoria": "plantas interior",
+            "precio": 890,
             "imagen": "pexels-sasha-kim-9412322.jpg"
           },
           {
+            "id": 41,
             "nombre": "Fitonia Roja",
             "descripcion": "Variedad colorida de fitonia, con hojas rojas y vetas verdes. Muy decorativa.",
             "categoria": "plantas interior",
+            "precio": 1490,
             "imagen": "pexels-sasha-kim-9412386.jpg"
           },
           {
+            "id": 42,
             "nombre": "Fitonia Blanca",
             "descripcion": "Pequeña planta de interior con vetas blancas sobre hojas verdes oscuras. Perfecta para adornar escritorios.",
             "categoria": "plantas interior",
+            "precio": 1390,
             "imagen": "pexels-sasha-kim-9412415.jpg"
           },
           {
+            "id": 43,
             "nombre": "Fitonia Rosada",
             "descripcion": "Planta compacta con vetas rosadas. Muy atractiva y fácil de cuidar.",
             "categoria": "plantas interior",
+            "precio": 1290,
             "imagen": "pexels-sasha-kim-9412433.jpg"
           },
           {
+            "id": 44,
             "nombre": "Suculenta Gasteria",
             "descripcion": "Planta suculenta con hojas carnosas y manchas blancas. Muy resistente.",
             "categoria": "suculentas",
+            "precio": 690,
             "imagen": "pexels-saturnus99-10919048.jpg"
           },
           {
+            "id": 45,
             "nombre": "Cactus Azul",
             "descripcion": "Cactus cilíndrico con tonalidades azuladas. Aporta contraste y textura.",
             "categoria": "cactus",
+            "precio": 890,
             "imagen": "pexels-shkrabaanthony-7342591.jpg"
           },
           {
+            "id": 46,
             "nombre": "Cactus Gema",
             "descripcion": "Cactus pequeño con formas geométricas, ideal para decoración moderna.",
             "categoria": "cactus",
+            "precio": 690,
             "imagen": "pexels-shkrabaanthony-7342644.jpg"
           },
-          {
+          {       
+            "id": 47,
             "nombre": "Cactus Rosa Decorativo",
             "descripcion": "Pequeño cactus con flores rosadas artificiales, perfecto como centro de mesa.",
             "categoria": "cactus",
+            "precio": 1390,
             "imagen": "pexels-shkrabaanthony-7342645.jpg"
           },
           {
+            "id": 48,
             "nombre": "Espatifilo (Peace Lily)",
             "descripcion": "Planta de hojas verdes oscuras y flores blancas. Ideal para interiores con luz difusa.",
             "categoria": "plantas interior",
+            "precio": 890,
             "imagen": "pexels-shvetsa-5230910.jpg"
           },
           {
+            "id": 49,
             "nombre": "Cinta Variegada",
             "descripcion": "Planta colgante de hojas verdes con bordes blancos. Muy resistente y purificadora del aire.",
             "categoria": "plantas interior",
+            "precio": 1990,
             "imagen": "pexels-tara-winstead-7111162.jpg"
           },
             {
+              "id": 50,
               "nombre": "Begonia Rex",
               "descripcion": "Planta de interior con hojas grandes, texturadas y de coloración llamativa. Ideal para ambientes sombreados.",
               "categoria": "plantas interior",
+              "precio": 1290,
               "imagen": "pexels-tatiana-pasechnik-245055727-12367419.jpg"
             },
             {
+              "id": 51,
               "nombre": "Dracaena Compacta",
               "descripcion": "Planta vertical de hojas verdes oscuras, muy popular por su resistencia y bajo mantenimiento.",
               "categoria": "plantas interior",
+              "precio": 890,
               "imagen": "pexels-teona-swift-6912848.jpg"
             },
             {
+              "id": 52,
               "nombre": "Zamioculca",
               "descripcion": "Planta muy resistente con hojas verdes brillantes. Ideal para espacios interiores con poca luz.",
               "categoria": "plantas interior",
+              "precio": 790,
               "imagen": "pexels-teona-swift-6913175.jpg"
             },
             {
+              "id": 53,
               "nombre": "Croton Petra",
               "descripcion": "Planta tropical de interior con hojas multicolor. Requiere buena luz para mantener su color vibrante.",
               "categoria": "plantas interior",
+              "precio": 890,
               "imagen": "pexels-teona-swift-6913635.jpg"
             },
             {
+              "id": 54,
               "nombre": "Crotón Variegado",
               "descripcion": "Variedad de crotón con hojas alargadas y tonos verdes, amarillos y naranjas.",
               "categoria": "plantas interior",
+              "precio": 390,
               "imagen": "pexels-teona-swift-6913752.jpg"
             },
             {
+              "id": 55,
               "nombre": "Poto (Epipremnum aureum)",
               "descripcion": "Planta trepadora con hojas en forma de corazón. Muy fácil de cuidar y excelente para colgar.",
               "categoria": "plantas interior",
+              "precio": 290,
               "imagen": "pexels-th-ng-phan-thanh-473894370-15945068.jpg"
             },
             {
+              "id": 56,
               "nombre": "Espina de Cristo (Euphorbia milii)",
               "descripcion": "Planta de hojas verdes con flores pequeñas, muy decorativa y resistente.",
               "categoria": "plantas con flor",
+              "precio": 890,
               "imagen": "pexels-thirdman-7219685.jpg"
             },
             {
+              "id": 57,
               "nombre": "Cactus Estrella",
               "descripcion": "Pequeño cactus con flores blancas y patrón estrellado. Muy estético y fácil de mantener.",
               "categoria": "cactus",
+              "precio": 1690,
               "imagen": "pexels-thirdman-7656125.jpg"
             },
             {
+              "id": 58,
               "nombre": "Aglaonema",
               "descripcion": "Planta tropical con hojas jaspeadas. Perfecta para interiores con poca luz.",
               "categoria": "plantas interior",
+              "precio": 1190,
               "imagen": "pexels-uriel-mont-6280430.jpg"
             },
             {
+              "id": 59,
               "nombre": "Alocasia Amazonica",
               "descripcion": "Planta exótica de hojas verdes oscuras con nervaduras blancas. Requiere humedad y buena luz.",
               "categoria": "plantas interior",
+              "precio": 1890,
               "imagen": "pexels-uriel-mont-6280436.jpg"
             },
             {
+              "id": 60,
               "nombre": "Calathea Medallion",
               "descripcion": "Planta con hojas redondas y patrones únicos. Ideal para interiores con luz indirecta.",
               "categoria": "plantas interior",
+              "precio": 1690,
               "imagen": "pexels-vovaflame-3126442.jpg"
             },
             {
+              "id": 61,
               "nombre": "Areca Mini",
               "descripcion": "Pequeña palma ideal para escritorios o rincones con luz difusa. Aporta frescura y elegancia.",
               "categoria": "plantas interior",
+              "precio": 890,
               "imagen": "pexels-wendywei-2808677.jpg"
             }
                     
