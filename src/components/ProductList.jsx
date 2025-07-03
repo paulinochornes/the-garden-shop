@@ -1,35 +1,26 @@
 // src/components/ProductList.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 
-const products = [
-  {
-    id: 1,
-    name: 'Monstera Deliciosa',
-    description: 'Planta tropical de interior con hojas grandes.',
-    price: 1200,
-  },
-  {
-    id: 2,
-    name: 'Lavanda',
-    description: 'Aromática y decorativa, ideal para exteriores soleados.',
-    price: 1500,
-  },
-  {
-    id: 3,
-    name: 'Sustrato universal',
-    description: 'Mezcla equilibrada para todo tipo de plantas.',
-    price: 600,
-  },
-];
-
 function ProductList() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('/productos_actualizado_con_precios.json')
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products));
+  }, []);
+
   return (
-    <div>
-      <h2>Nuestros productos 🌿</h2>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div className="container py-5">
+      <h2 className="mb-4">Nuestros Productos</h2>
+      <div className="row g-4">
+        {products.map((product, index) => (
+          <div className="col-12 col-sm-6 col-md-4" key={index}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

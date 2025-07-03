@@ -6,14 +6,26 @@ function ProductCard({ product }) {
   const { addToCart } = useCart();
 
   return (
-    <div style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <strong>${product.price}</strong>
-      <br />
-      <button onClick={() => addToCart(product)} style={{ marginTop: '1rem' }}>
-        Agregar al carrito
-      </button>
+    <div className="card h-100 shadow-sm">
+      <img
+        src={`/images/${product.imagen}`}
+        className="card-img-top"
+        alt={product.nombre}
+        style={{ height: '200px', objectFit: 'cover' }}
+      />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{product.nombre}</h5>
+        <p className="card-text">{product.descripcion}</p>
+        <div className="mt-auto">
+          <p className="fw-bold">${product.precio}</p>
+          <button
+            className="btn btn-success w-100"
+            onClick={() => addToCart(product)}
+          >
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

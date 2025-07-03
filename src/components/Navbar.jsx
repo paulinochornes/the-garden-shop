@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import '../styles/navbar.css';
+import logo from '../assets/logo.png';
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,10 +18,13 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: '#EEEFE0', padding: '1rem' }}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-3 py-2" style={{ backgroundColor: '#EEEFE0' }}>
       <div className="container-fluid">
-        <Link className="navbar-brand fw-bold" to="/" style={{ color: '#819a91' }}>
-          🌿 The Garden Shop
+
+        {/* Logo y menú izquierdo */}
+        <Link className="navbar-brand fw-bold d-flex align-items-center" to="/" style={{ color: '#819a91' }}>
+          <img src={logo} alt="The Garden Shop" className="logo-img me-2" />
+          The Garden Shop
         </Link>
 
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -28,18 +32,14 @@ function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          {/* Menú de navegación */}
+          <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/">Inicio</Link>
             </li>
 
             <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
+              <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown">
                 Productos
               </Link>
               <ul className="dropdown-menu">
@@ -54,24 +54,15 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/us">Nosotros</Link>
             </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Login</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link position-relative" to="/cart">
-                🛒 Carrito
-                {totalItems > 0 && (
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                    {totalItems}
-                  </span>
-                )}
-              </Link>
-            </li>
           </ul>
 
-          <form className="d-flex" onSubmit={handleSearch}>
+          {/* Buscador centrado */}
+          <form
+  className="d-none d-md-flex mx-auto"
+  onSubmit={handleSearch}
+  style={{ maxWidth: '400px', width: '100%' }}
+>
+
             <input
               className="form-control me-2"
               type="search"
@@ -81,6 +72,23 @@ function Navbar() {
             />
             <button className="btn btn-outline-success" type="submit">Buscar</button>
           </form>
+
+          {/* Login y Carrito a la derecha */}
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">Login</Link>
+            </li>
+            <li className="nav-item position-relative">
+              <Link className="nav-link" to="/cart">
+                🛒 
+                {totalItems > 0 && (
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

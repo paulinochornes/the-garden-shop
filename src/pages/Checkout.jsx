@@ -4,7 +4,6 @@ import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import '../styles/cart.css';
-import Footer from '../components/Footer';
 
 function Checkout() {
   const { cartItems, clearCart } = useCart();
