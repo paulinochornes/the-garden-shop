@@ -1,6 +1,5 @@
-// src/pages/Products.jsx
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import productsData from '../data/products.json';
 import Footer from '../components/Footer';
@@ -18,13 +17,15 @@ function Products() {
     let filtered = productsData.products;
 
     if (categoryFromPath) {
-      filtered = filtered.filter(product => product.category?.toLowerCase() === categoryFromPath.toLowerCase());
+      filtered = filtered.filter(product =>
+        product.categoria?.toLowerCase() === categoryFromPath.toLowerCase()
+      );
     }
 
     if (searchQuery) {
       filtered = filtered.filter(product =>
-        product.name.toLowerCase().includes(searchQuery) ||
-        product.description.toLowerCase().includes(searchQuery)
+        product.nombre.toLowerCase().includes(searchQuery) ||
+        product.descripcion.toLowerCase().includes(searchQuery)
       );
     }
 
@@ -32,16 +33,20 @@ function Products() {
   }, [searchQuery, categoryFromPath]);
 
   return (
-    <div className="container mt-5">
-      <h2>Productos</h2>
+    <div className="container py-5">
+      <h2 className="mb-4">Productos</h2>
       {products.length === 0 ? (
         <p>No se encontraron productos para "{searchQuery || categoryFromPath}"</p>
       ) : (
-        products.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))
+        <div className="row g-4">
+          {products.map(product => (
+            <div key={product.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
       )}
-            <Footer />
+      <Footer />
     </div>
   );
 }

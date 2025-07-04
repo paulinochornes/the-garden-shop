@@ -1,22 +1,21 @@
 // src/components/ProductList.jsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ProductCard from './ProductCard';
+import productsData from '../data/products.json';
 
 function ProductList() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('/productos_actualizado_con_precios.json')
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products));
-  }, []);
-
   return (
-    <div className="container py-5">
-      <h2 className="mb-4">Nuestros Productos</h2>
-      <div className="row g-4">
-        {products.map((product, index) => (
-          <div className="col-12 col-sm-6 col-md-4" key={index}>
+    <div style={{ padding: '2rem' }}>
+      <h2 style={{ marginBottom: '1.5rem' }}>Nuestros Productos</h2>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem',
+        }}
+      >
+        {productsData.products.map((product) => (
+          <div key={product.id}>
             <ProductCard product={product} />
           </div>
         ))}

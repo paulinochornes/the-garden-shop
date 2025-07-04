@@ -1,6 +1,7 @@
-// src/components/ProductCard.jsx
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
+import '../styles/ProductCard.css';
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
@@ -8,25 +9,28 @@ function ProductCard({ product }) {
   if (!product) return null;
 
   return (
-    <div className="card h-100 shadow-sm">
-      <img
-        src={`/images/${product.imagen}`}
-        className="card-img-top"
-        alt={product.nombre}
-        style={{ height: '220px', objectFit: 'cover' }}
-      />
-      <div className="card-body d-flex flex-column">
-        <h5 className="card-title">{product.nombre}</h5>
-        <p className="card-text text-muted small">{product.descripcion}</p>
-        <div className="mt-auto d-flex justify-content-between align-items-center">
-          <span className="fw-bold text-success">${product.precio}</span>
-          <button
-            className="btn btn-sm btn-outline-success"
-            onClick={() => addToCart(product)}
-          >
-            Agregar
-          </button>
+    <div className="product-card">
+      <Link to={`/product/${product.id}`} className="text-decoration-none text-dark">
+        <img
+          src={`/images/${product.imagen}`}
+          className="product-img"
+          alt={product.nombre}
+        />
+        <div className="product-body">
+          <div className="product-content">
+            <h5 className="product-title">{product.nombre}</h5>
+            <p className="product-description">{product.descripcion}</p>
+          </div>
+          <span className="product-price">${product.precio}</span>
         </div>
+      </Link>
+      <div className="product-footer">
+        <button
+          className="btn-agregar"
+          onClick={() => addToCart(product)}
+        >
+          Agregar
+        </button>
       </div>
     </div>
   );

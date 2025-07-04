@@ -1,4 +1,3 @@
-// src/pages/Us.jsx
 import React from 'react';
 import Footer from '../components/Footer';
 

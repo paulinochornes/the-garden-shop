@@ -9,11 +9,15 @@ import ProductDetail from './pages/ProductDetail';
 import Us from './pages/Us';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Addresses from './pages/Addresses';
+import Orders from './pages/Orders';
+import Payments from './pages/Payments';
+import WhatsAppButton from './components/WhatsAppButton';
+
 import { CartProvider } from './context/CartContext';
 import './styles/navbar.css';
 
-// Importar estilos
-import './styles/navbar.css';
 
 function App() {
   return (
@@ -30,8 +34,13 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/us" element={<Us />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/addresses" element={<Addresses />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/payments" element={<Payments />} />
           </Routes>
         </div>
+        <WhatsAppButton /> 
       </Router>
     </CartProvider>
   );

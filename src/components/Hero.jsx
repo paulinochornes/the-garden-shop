@@ -1,16 +1,16 @@
-import heroImage from "../assets/hero.png";
-import "../styles/hero.css";
+import React from 'react';
+import '../styles/hero.css'; 
 
-function Hero() {
+function HeroBanner() {
   return (
-    <section className="hero-section text-center text-white d-flex align-items-center justify-content-center">
-      <div className="overlay" />
-      <div className="content">
-        <h1 className="display-4 fw-bold">Bienvenido a The Garden Shop</h1>
-        <p className="lead">Tu rincón verde para conectar con la naturaleza</p>
-      </div>
-    </section>
+    <div className="card-base" style={{ padding: '2rem', textAlign: 'center' }}>
+      <h1>Bienvenidos a The Garden Shop</h1>
+      <p>Tu vivero favorito ahora también online.</p>
+      <button className="btn-agregar" onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })}>
+        Ver productos
+      </button>
+    </div>
   );
 }
 
-export default Hero;
+export default HeroBanner;

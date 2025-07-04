@@ -7,10 +7,17 @@ import '../styles/cart.css';
 
 function Checkout() {
   const { cartItems, clearCart } = useCart();
-  const [form, setForm] = useState({ name: '', email: '', address: '', cardNumber: '', expiry: '', cvv: '' });
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    address: '',
+    cardNumber: '',
+    expiry: '',
+    cvv: ''
+  });
   const [submitted, setSubmitted] = useState(false);
 
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,6 +43,20 @@ function Checkout() {
   return (
     <div className="container mt-5">
       <h2 className="cart-title">Finalizar compra</h2>
+
+      {/* Resumen del carrito */}
+      <div className="col-12 mb-4">
+        <h5>Resumen del carrito</h5>
+        <ul className="list-group mb-3">
+          {cartItems.map((item) => (
+            <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
+              <span>{item.nombre} x {item.quantity}</span>
+              <span>${item.precio * item.quantity}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <form onSubmit={handleSubmit} className="row g-3">
         <div className="col-md-6">
           <label className="form-label">Nombre</label>
@@ -108,7 +129,7 @@ function Checkout() {
           />
         </div>
 
-        <div className="col-12 total-price">Total a pagar: ${total}</div>
+        <div className="col-12 total-price fw-bold">Total a pagar: ${total}</div>
         <div className="col-12 text-end">
           <button type="submit" className="btn btn-success">
             Confirmar compra

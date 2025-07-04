@@ -1,0 +1,41 @@
+.carousel-bootstrap-container {
+    background-color: #EEEFE0;
+    padding: 2rem 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(129, 154, 145, 0.2);
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .carousel-card-wrapper {
+    width: 300px;
+    background-color: #EEEFE0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(129, 154, 145, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .carousel-card-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(129, 154, 145, 0.3);
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+  }
+  
+  .custom-carousel-icon {
+    background-color: #a7c1a8;
+    border-radius: 50%;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background-size: 100% 100%;
+  }
+  
+  .carousel-control-prev:hover .custom-carousel-icon,
+  .carousel-control-next:hover .custom-carousel-icon {
+    background-color: #819a91;
+  }
+  
