@@ -1,7 +1,7 @@
 @import './styles/variables.css';
 
 body {
-  background-color: var(--crema);
+  background-color: #f8f8f8;
   color: var(--text-dark);
   font-family: 'Segoe UI', sans-serif;
 }

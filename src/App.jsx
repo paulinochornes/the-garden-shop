@@ -14,9 +14,10 @@ import Addresses from './pages/Addresses';
 import Orders from './pages/Orders';
 import Payments from './pages/Payments';
 import WhatsAppButton from './components/WhatsAppButton';
-
+import Guides from './pages/Guides';
 import { CartProvider } from './context/CartContext';
 import './styles/navbar.css';
+import './index.css';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path="/addresses" element={<Addresses />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/payments" element={<Payments />} />
+            <Route path="/guides" element={<Guides />} />
           </Routes>
         </div>
         <WhatsAppButton /> 

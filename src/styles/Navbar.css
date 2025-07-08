@@ -1,71 +1,138 @@
-
-.logo-img {
-  height: 32px;
-  transition: height 0.3s ease;
-  padding: 0%;
+/* Estilo general de la navbar */
+.navbar {
+  background-color: #EEEFE0 !important;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 10;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Contenedor interno de la navbar */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+/* Logo agrandado */
+.logo-img {
+  height: 80px;
+  max-height: none;
+  width: auto;
+  object-fit: contain;
+  transition: height 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+/* Logo en tablets y desktop aún más grande */
 @media (min-width: 768px) {
   .logo-img {
-    height: 40px;
-    padding: 0%;
+    height: 96px;
   }
 }
 
 @media (min-width: 992px) {
   .logo-img {
-    height: 48px;
-    padding: 0%;
+    height: 112px;
   }
 }
 
+/* Marca del sitio */
+.navbar-brand {
+  color: #819a91 !important;
+  font-weight: bold;
+}
 
-.navbar {
-    background-color: #EEEFE0 !important;
-    padding: 1rem;
-  }
-  
-  .navbar-brand {
-    color: #819a91 !important;
-    font-weight: bold;
-  }
-  
-  .nav-link {
-    color: #819a91 !important;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #a7c1a8 !important;
-  }
-  
-  .dropdown-menu {
-    background-color: #D1D8BE;
-    border: none;
-  }
-  
-  .dropdown-item {
-    color: #4e5c57;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #a7c1a8;
-    color: #fff;
-  }
-  
-  .btn-outline-success {
-    border-color: #819a91;
-    color: #819a91;
-  }
-  
-  .btn-outline-success:hover {
-    background-color: #a7c1a8;
-    border-color: #a7c1a8;
-    color: #fff;
-  }
-  
-  .badge.bg-success {
-    background-color: #a7c1a8 !important;
-    font-size: 0.75rem;
-  }
-  
+/* Enlaces del navbar */
+.nav-link {
+  color: #819a91 !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #a7c1a8 !important;
+}
+
+/* Menús desplegables */
+.dropdown-menu,
+.mobile-menu {
+  background-color: #D1D8BE;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  color: #4e5c57;
+}
+
+.dropdown-item:hover {
+  background-color: #a7c1a8;
+  color: #fff;
+}
+
+/* Botones generales */
+.btn-outline-secondary {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: #819a91;
+  padding: 0.4rem 0.6rem;
+}
+
+.btn-outline-secondary:hover {
+  color: #a7c1a8;
+  background-color: transparent;
+}
+
+.btn-primary-green {
+  background-color: #819a91;
+  color: white;
+  border: none;
+}
+
+.btn-primary-green:hover {
+  background-color: #6f887d;
+}
+
+/* Badges del carrito */
+.badge.bg-success {
+  background-color: #a7c1a8 !important;
+  font-size: 0.75rem;
+}
+
+/* Estilo para los enlaces del menú mobile */
+.mobile-menu .nav-link {
+  padding: 0.5rem 0;
+  display: block;
+  color: #4e5c57;
+}
+
+.mobile-menu .nav-link:hover {
+  color: #fff;
+  background-color: #a7c1a8;
+}
+
+/* Contenedor del buscador */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Input de búsqueda estilizado */
+.search-container input[type="text"] {
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #a7c1a8;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #819a91;
+  box-shadow: 0 0 0 2px rgba(129, 154, 145, 0.2);
+  outline: none;
+}
