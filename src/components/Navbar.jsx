@@ -1,9 +1,8 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiSearch, FiShoppingCart, FiMenu } from 'react-icons/fi';
+import { FiSearch, FiShoppingCart, FiMenu, FiUser } from 'react-icons/fi';
 import logo from '../assets/logo.png';
 import '../styles/navbar.css';
 
@@ -55,31 +54,38 @@ function Navbar() {
   return (
     <nav className="navbar shadow-sm">
       <div className="container navbar-inner px-3">
-
-        {/* Logo */}
         <Link className="navbar-brand d-flex align-items-center me-auto" to="/">
           <img src={logo} alt="The Garden Shop" className="logo-img" />
         </Link>
-
-        {/* Menú desktop */}
         <ul className="nav gap-4 d-none d-lg-flex justify-content-center flex-grow-1">
           <li className="nav-item">
             <Link className="nav-link" to="/">Inicio</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/products">Productos</Link>
+
+          <li className="nav-item dropdown">
+            <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+              Productos
+            </span>
+            <ul className="dropdown-menu">
+              <li><Link className="dropdown-item" to="/products">Todos</Link></li>
+              <li><Link className="dropdown-item" to="/products/plantas interior">Plantas de interior</Link></li>
+              <li><Link className="dropdown-item" to="/products/plantas exterior">Plantas de exterior</Link></li>
+              <li><Link className="dropdown-item" to="/products/suculentas">Suculentas</Link></li>
+              <li><Link className="dropdown-item" to="/products/cactus">Cactus</Link></li>
+              <li><Link className="dropdown-item" to="/products/bonsai">Bonsái</Link></li>
+            </ul>
           </li>
+
           <li className="nav-item">
             <Link className="nav-link" to="/guides">Guías</Link>
           </li>
+
           <li className="nav-item">
             <Link className="nav-link" to="/us">Nosotros</Link>
           </li>
         </ul>
-
-        {/* Íconos lado derecho */}
         <div className="d-flex align-items-center gap-3 justify-content-end">
-          {/* Buscador */}
+
           <div ref={searchRef} className="search-container">
             <AnimatePresence>
               {showSearch ? (
@@ -117,7 +123,6 @@ function Navbar() {
             </AnimatePresence>
           </div>
 
-          {/* Carrito */}
           <motion.div
             key={totalItems}
             animate={{ scale: [1, 1.2, 1] }}
@@ -133,7 +138,40 @@ function Navbar() {
             </Link>
           </motion.div>
 
-          {/* Menú Hamburguesa solo mobile */}
+          {/* Usuario (desktop) */}
+          {userName ? (
+            <div ref={dropdownRef} className="nav-item position-relative d-none d-lg-block">
+             <div
+  className="nav-link dropdown-toggle d-flex align-items-center gap-1"
+  role="button"
+  onClick={() => setShowDropdown(prev => !prev)}
+>
+  <FiUser size={18} />
+  <span>{userName}</span>
+</div>
+              <AnimatePresence>
+                {showDropdown && (
+                  <motion.ul
+                    className="dropdown-menu dropdown-menu-end show"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    style={{ display: 'block', position: 'absolute', right: 0 }}
+                  >
+                    <li><Link className="dropdown-item" to="/profile">Perfil</Link></li>
+                    <li><Link className="dropdown-item" to="/addresses">Direcciones</Link></li>
+                    <li><Link className="dropdown-item" to="/orders">Pedidos</Link></li>
+                    <li><Link className="dropdown-item" to="/payments">Métodos de pago</Link></li>
+                    <li><button className="dropdown-item text-danger" onClick={handleLogout}>Cerrar sesión</button></li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
+          ) : (
+            <Link className="nav-link d-none d-lg-block" to="/login">Login</Link>
+          )}
+
           <button
             className="btn btn-outline-secondary d-lg-none"
             onClick={() => setShowMobileMenu(prev => !prev)}
@@ -143,7 +181,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Menú mobile */}
+
       <AnimatePresence>
         {showMobileMenu && (
           <motion.div
@@ -155,10 +193,21 @@ function Navbar() {
           >
             <ul className="list-unstyled mb-2">
               <li><Link className="nav-link" to="/">Inicio</Link></li>
-              <li><Link className="nav-link" to="/products">Productos</Link></li>
+              <li>
+                <span className="nav-link fw-bold">Productos</span>
+                <ul className="list-unstyled ps-3">
+                  <li><Link className="nav-link" to="/products">Todos</Link></li>
+                  <li><Link className="nav-link" to="/products/plantas interior">Plantas de interior</Link></li>
+                  <li><Link className="nav-link" to="/products/plantas exterior">Plantas de exterior</Link></li>
+                  <li><Link className="nav-link" to="/products/suculentas">Suculentas</Link></li>
+                  <li><Link className="nav-link" to="/products/cactus">Cactus</Link></li>
+                  <li><Link className="nav-link" to="/products/bonsai">Bonsái</Link></li>
+                </ul>
+              </li>
               <li><Link className="nav-link" to="/guides">Guías</Link></li>
               <li><Link className="nav-link" to="/us">Nosotros</Link></li>
-              {userName && (
+
+              {userName ? (
                 <>
                   <li><Link className="nav-link" to="/profile">Perfil</Link></li>
                   <li><Link className="nav-link" to="/addresses">Direcciones</Link></li>
@@ -166,8 +215,7 @@ function Navbar() {
                   <li><Link className="nav-link" to="/payments">Métodos de pago</Link></li>
                   <li><button className="btn btn-danger btn-sm" onClick={handleLogout}>Cerrar sesión</button></li>
                 </>
-              )}
-              {!userName && (
+              ) : (
                 <li><Link className="nav-link" to="/login">Login</Link></li>
               )}
             </ul>

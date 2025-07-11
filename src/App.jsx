@@ -15,6 +15,7 @@ import Orders from './pages/Orders';
 import Payments from './pages/Payments';
 import WhatsAppButton from './components/WhatsAppButton';
 import Guides from './pages/Guides';
+import GuideDetail from './pages/GuideDetail';
 import { CartProvider } from './context/CartContext';
 import './styles/navbar.css';
 import './index.css';
@@ -40,6 +41,7 @@ function App() {
             <Route path="/orders" element={<Orders />} />
             <Route path="/payments" element={<Payments />} />
             <Route path="/guides" element={<Guides />} />
+            <Route path="/guides/:slug" element={<GuideDetail />} />
           </Routes>
         </div>
         <WhatsAppButton /> 

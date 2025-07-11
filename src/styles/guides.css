@@ -1,16 +1,35 @@
 .guide-card {
-    background-color: #EEEFE0;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .guide-card:hover {
-    background-color: #D1D8BE;
-    transform: translateY(-4px);
-  }
-  
-  .guide-icon {
-    font-size: 2.5rem;
-    color: #819a91;
-  }
-  
+  background-color: #EEEFE0;
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guide-card:hover {
+  background-color: #D1D8BE;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.guide-icon {
+  font-size: 2.8rem;
+  color: #819a91;
+  transition: transform 0.3s ease;
+}
+
+.guide-card:hover .guide-icon {
+  transform: scale(1.1);
+}
+
+.guide-card h5 {
+  color: #4e5c57;
+  font-weight: 600;
+}
+
+.guide-card p {
+  color: #6c757d;
+}
