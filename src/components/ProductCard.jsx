@@ -27,7 +27,8 @@ function ProductCard({ product }) {
       <div className="product-footer">
         <button
           className="btn-agregar"
-          onClick={() => addToCart(product)}
+          onClick={() => addToCart({ ...product, quantity: 1 })}
+
         >
           Agregar
         </button>

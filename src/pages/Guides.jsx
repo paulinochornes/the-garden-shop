@@ -1,7 +1,10 @@
-// src/pages/Guides.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiDroplet, FiSun, FiAlertCircle, FiBookOpen, FiActivity, FiFeather } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import {
+  FiDroplet, FiSun, FiAlertCircle,
+  FiBookOpen, FiActivity, FiFeather
+} from 'react-icons/fi';
 import '../styles/guides.css';
 
 const guides = [
@@ -37,16 +40,53 @@ const guides = [
   },
 ];
 
+// Animaciones
+const containerVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 70, damping: 12 }
+  }
+};
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
 function Guides() {
   return (
-    <div className="guides-page container py-5">
-      <h1 className="text-center text-success mb-3">Guías de Cuidado</h1>
-      <p className="text-center text-muted mb-5">
+    <motion.div
+      className="guides-page container py-5"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.h1 className="text-center text-success mb-3" variants={itemVariants}>
+        Guías de Cuidado
+      </motion.h1>
+      <motion.p className="text-center text-muted mb-5" variants={itemVariants}>
         Aprendé a cuidar tus plantas con amor y conocimiento.
-      </p>
-      <div className="row g-4">
+      </motion.p>
+
+      <motion.div className="row g-4" variants={stagger}>
         {guides.map((guide, index) => (
-          <div className="col-12 col-md-6 col-lg-4" key={index}>
+          <motion.div
+            className="col-12 col-md-6 col-lg-4"
+            key={index}
+            variants={itemVariants}
+          >
             <Link to={`/guides/${guide.slug}`} className="text-decoration-none">
               <div className="guide-card h-100 p-4 text-center shadow-sm">
                 <div className="guide-icon mb-3">{guide.icon}</div>
@@ -54,10 +94,10 @@ function Guides() {
                 <p className="text-muted small">{guide.description}</p>
               </div>
             </Link>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

@@ -4,11 +4,18 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 function Cart() {
-  const { cartItems, removeFromCart, clearCart, totalPrice } = useCart();
+  const {
+    cartItems,
+    removeFromCart,
+    clearCart,
+    totalPrice,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useCart();
 
   return (
     <div className="container py-5">
-      <h2 className="mb-4 text-center text-success">🛒 Tu carrito de compras</h2>
+      <h2 className="mb-4 text-center text-success">Tu carrito de compras</h2>
 
       {cartItems.length === 0 ? (
         <div className="alert alert-info text-center">
@@ -25,12 +32,36 @@ function Cart() {
                 <img
                   src={`/images/${item.imagen}`}
                   alt={item.nombre}
-                  style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '8px' }}
+                  style={{
+                    width: '80px',
+                    height: '80px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                  }}
                 />
                 <div className="flex-grow-1">
                   <h5 className="mb-1">{item.nombre}</h5>
-                  <p className="mb-1">Precio: ${item.precio}</p>
-                  <p className="mb-1">Cantidad: {item.quantity}</p>
+                  <p className="mb-1">Precio unitario: ${item.precio}</p>
+
+                  <div className="d-flex align-items-center gap-2">
+                    <button
+                      className="btn btn-outline-secondary btn-sm"
+                      onClick={() => decreaseQuantity(item.id)}
+                    >
+                      −
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button
+                      className="btn btn-outline-secondary btn-sm"
+                      onClick={() => increaseQuantity(item.id)}
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <p className="mb-1 fw-bold mt-2">
+                    Subtotal: ${item.precio * item.quantity}
+                  </p>
                 </div>
                 <button
                   className="btn btn-outline-danger btn-sm"
@@ -43,7 +74,7 @@ function Cart() {
           </div>
 
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <h4 className="mb-3 mb-md-0">Total: ${totalPrice}</h4>
+            <h4 className="mb-3 mb-md-0">Total: ${totalPrice()}</h4>
             <div className="d-flex gap-3">
               <button className="btn btn-outline-secondary" onClick={clearCart}>
                 Vaciar carrito

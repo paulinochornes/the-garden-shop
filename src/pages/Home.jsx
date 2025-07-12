@@ -1,10 +1,12 @@
-// src/pages/Home.jsx
 import React, { useEffect, useState } from 'react';
 import productsData from '../data/products.json';
 import ProductCard from '../components/ProductCard';
 import Carousel from 'react-bootstrap/Carousel';
-import heroImage from '../assets/hero.png';
+import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import Hero from '../components/Hero';
+import FeaturedProducts from '../components/FeaturedProducts'; // 🔹 NUEVO
+import '../styles/home.css';
 
 function Home() {
   const [featured, setFeatured] = useState([]);
@@ -16,54 +18,97 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      {/* Portada */}
-      <div className="text-center py-5 bg-light">
-        <img
-          src={heroImage}
-          alt="The Garden Shop"
-          className="img-fluid"
-          style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
-        />
-        <h1 className="mt-3">Bienvenidos a The Garden Shop</h1>
-        <p className="lead">Tu vivero de confianza</p>
-      </div>
+    <>
+      <Hero />
 
-      {/* Carrusel de productos */}
-      <div className="container py-4">
-        <h2 className="mb-4">Novedades</h2>
-        <Carousel>
-          {carouselItems.map((product) => (
-            <Carousel.Item key={product.id}>
-              <img
-                src={`/images/${product.imagen}`}
-                className="d-block w-100"
-                alt={product.nombre}
-                style={{ maxHeight: '400px', objectFit: 'cover' }}
-              />
-              <Carousel.Caption>
-                <h5>{product.nombre}</h5>
-                <p>{product.descripcion}</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </div>
-
-      {/* Productos destacados */}
-      <div className="container py-5">
-        <h2 className="mb-4">Productos Destacados</h2>
-        <div className="row g-4">
-          {featured.map((product) => (
-            <div key={product.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
-              <ProductCard product={product} />
-            </div>
-          ))}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Carrusel de productos */}
+        <div className="container py-5">
+          <motion.h2 className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Novedades
+          </motion.h2>
+          <Carousel>
+            {carouselItems.map((product) => (
+              <Carousel.Item key={product.id}>
+                <motion.img
+                  src={`/images/${product.imagen}`}
+                  className="d-block w-100"
+                  alt={product.nombre}
+                  style={{ maxHeight: '400px', objectFit: 'cover' }}
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <Carousel.Caption>
+                  <h5>{product.nombre}</h5>
+                  <p>{product.descripcion}</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </div>
-      </div>
 
-      <Footer />
-    </div>
+        {/* Productos destacados */}
+        <motion.div
+          className="container py-5"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2 className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Productos Destacados
+          </motion.h2>
+          <div className="row g-4">
+            {featured.map((product) => (
+              <motion.div
+                key={product.id}
+                className="col-12 col-sm-6 col-md-4 col-lg-3"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProductCard product={product} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* 🔽 NUEVA SECCIÓN: Historial de precios */}
+        <motion.div
+          className="container py-5 featured-prices-section"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2 className="section-title mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Tendencia de precios
+          </motion.h2>
+          <FeaturedProducts />
+        </motion.div>
+
+        <Footer />
+      </motion.div>
+    </>
   );
 }
 

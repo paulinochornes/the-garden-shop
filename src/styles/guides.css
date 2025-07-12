@@ -11,7 +11,7 @@
 
 .guide-card:hover {
   background-color: #D1D8BE;
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.01);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 

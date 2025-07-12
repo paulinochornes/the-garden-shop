@@ -5,7 +5,8 @@
   .guide-detail h1 {
     font-size: 2.4rem;
     font-weight: 700;
-    color: #819a91;
+    color: #2e7d57; /* Verde más fuerte */
+    margin-bottom: 0.5rem;
   }
   
   .guide-detail p {
@@ -29,28 +30,31 @@
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   }
   
-  .guide-detail .btn-outline-secondary {
+  .guide-detail .btn-outline-success {
     color: #819a91;
     border: 1px solid #819a91;
+    transition: all 0.3s ease;
   }
   
-  .guide-detail .btn-outline-secondary:hover {
+  .guide-detail .btn-outline-success:hover {
     background-color: #a7c1a8;
     color: #fff;
     border-color: #a7c1a8;
   }
   
-  /* Tips y alertas */
-  .tip-box {
-    background-color: #D1D8BE;
-    border-left: 5px solid #819a91;
-    padding: 1rem;
-    border-radius: 0.8rem;
-    margin: 1.5rem 0;
-    color: #4e5c57;
+  /* Animación fade-in para cada sección */
+  .guide-detail section {
+    animation: fadeInUp 0.6s ease both;
   }
   
-  .tip-box strong {
-    color: #6f887d;
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   

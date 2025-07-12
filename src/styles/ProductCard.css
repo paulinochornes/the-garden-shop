@@ -77,3 +77,10 @@
   background-color: #819a91;
   transform: scale(1.01);
 }
+
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

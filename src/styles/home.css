@@ -1,0 +1,80 @@
+/* Estilo base para la sección del hero */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .hero-section img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #374a3d;
+    margin-top: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: #5d6f63;
+  }
+  
+  /* Títulos de sección */
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #374a3d;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid #819a91;
+  }
+  
+  /* Alinear captions del carrusel */
+  .carousel-caption h5,
+  .carousel-caption p {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Gráficos de tendencias */
+.featured-prices-section {
+    background-color: #f4f6f3;
+    padding: 3rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .featured-prices-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #374a3d;
+    margin-bottom: 2rem;
+    border-left: 4px solid #a7c1a8;
+    padding-left: 1rem;
+  }
+  
+  .featured-prices-section .recharts-wrapper {
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    .featured-prices-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

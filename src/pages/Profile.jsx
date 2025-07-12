@@ -1,15 +1,21 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function Profile() {
   return (
-    <div className="container mt-5">
+    <motion.div
+      className="dashboard-section"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <h2>Mi Perfil</h2>
-      <div className="card p-3 shadow-sm mt-3">
+      <div className="dashboard-card card p-3">
         <p><strong>Nombre:</strong> Juan Pérez</p>
-        <p><strong>Email:</strong> juan.perez@example.com</p>
+        <p><strong>Email:</strong> juan.perez@garden.com</p>
         <p><strong>Teléfono:</strong> +598 91234567</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,45 +1,58 @@
 import React from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import guidesData from '../data/guidesData';
 import '../styles/guideDetail.css';
+import { motion } from 'framer-motion';
 
 function GuideDetail() {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const guide = guidesData.find(g => g.slug === slug);
 
   if (!guide) {
-    return (
-      <div className="container py-5 text-center">
-        <h2>Guía no encontrada 🌱</h2>
-        <button className="btn btn-primary-green mt-3" onClick={() => navigate('/guides')}>
-          Volver a guías
-        </button>
-      </div>
-    );
+    return <div className="container py-5 text-center">Guía no encontrada.</div>;
   }
 
   return (
-    <div className="guide-detail container py-5">
-      <div className="mb-4">
-        <h1 className="text-success">{guide.title}</h1>
+    <motion.div
+      className="guide-detail container py-5"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <header className="text-center mb-5">
+        <h1 className="text-success mb-3">{guide.title}</h1>
         <p className="text-muted">{guide.description}</p>
-        <Link to="/guides" className="btn btn-outline-secondary mt-3">← Volver a guías</Link>
-      </div>
+      </header>
 
-      {guide.image && (
-        <div className="mb-4">
-          <img src={guide.image} alt={guide.title} className="img-fluid rounded shadow-sm" />
-        </div>
-      )}
+      {guide.content.map((section, idx) => (
+        <motion.section
+          key={idx}
+          className="mb-5"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: idx * 0.15 }}
+        >
+          <h4 className="text-primary mb-3">{section.subtitle}</h4>
 
-      {guide.content.map((section, index) => (
-        <div className="mb-4" key={index}>
-          <h4 className="text-dark">{section.subtitle}</h4>
-          <p className="text-muted">{section.text}</p>
-        </div>
+          {section.image && (
+            <motion.img
+              src={section.image}
+              alt={section.subtitle}
+              className="img-fluid rounded mb-3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            />
+          )}
+
+          <p>{section.text}</p>
+        </motion.section>
       ))}
-    </div>
+
+      <div className="text-center mt-4">
+        <Link to="/guides" className="btn btn-outline-success">← Volver a Guías</Link>
+      </div>
+    </motion.div>
   );
 }
 

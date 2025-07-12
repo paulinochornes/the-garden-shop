@@ -17,16 +17,16 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Guides from './pages/Guides';
 import GuideDetail from './pages/GuideDetail';
 import { CartProvider } from './context/CartContext';
+import UserLayout from './components/UserLayout';
 import './styles/navbar.css';
 import './index.css';
-
 
 function App() {
   return (
     <CartProvider>
       <Router>
         <Navbar />
-        <div className="container mt-4">
+        <div className="container-fluid px-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
@@ -36,15 +36,17 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/us" element={<Us />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/addresses" element={<Addresses />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/payments" element={<Payments />} />
             <Route path="/guides" element={<Guides />} />
             <Route path="/guides/:slug" element={<GuideDetail />} />
+
+            {/* Rutas protegidas con Layout de Usuario */}
+            <Route path="/profile" element={<UserLayout><Profile /></UserLayout>} />
+            <Route path="/addresses" element={<UserLayout><Addresses /></UserLayout>} />
+            <Route path="/orders" element={<UserLayout><Orders /></UserLayout>} />
+            <Route path="/payments" element={<UserLayout><Payments /></UserLayout>} />
           </Routes>
         </div>
-        <WhatsAppButton /> 
+        <WhatsAppButton />
       </Router>
     </CartProvider>
   );

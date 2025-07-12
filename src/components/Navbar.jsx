@@ -9,14 +9,12 @@ import '../styles/navbar.css';
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSearch, setShowSearch] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [userName, setUserName] = useState(null);
   const navigate = useNavigate();
   const { totalItems } = useCart();
 
   const searchRef = useRef();
-  const dropdownRef = useRef();
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isAuthenticated') === 'true';
@@ -28,9 +26,6 @@ function Navbar() {
     function handleClickOutside(e) {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
         setShowSearch(false);
-      }
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setShowDropdown(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -57,11 +52,11 @@ function Navbar() {
         <Link className="navbar-brand d-flex align-items-center me-auto" to="/">
           <img src={logo} alt="The Garden Shop" className="logo-img" />
         </Link>
+
         <ul className="nav gap-4 d-none d-lg-flex justify-content-center flex-grow-1">
           <li className="nav-item">
             <Link className="nav-link" to="/">Inicio</Link>
           </li>
-
           <li className="nav-item dropdown">
             <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
               Productos
@@ -75,17 +70,15 @@ function Navbar() {
               <li><Link className="dropdown-item" to="/products/bonsai">Bonsái</Link></li>
             </ul>
           </li>
-
           <li className="nav-item">
             <Link className="nav-link" to="/guides">Guías</Link>
           </li>
-
           <li className="nav-item">
             <Link className="nav-link" to="/us">Nosotros</Link>
           </li>
         </ul>
-        <div className="d-flex align-items-center gap-3 justify-content-end">
 
+        <div className="d-flex align-items-center gap-3 justify-content-end">
           <div ref={searchRef} className="search-container">
             <AnimatePresence>
               {showSearch ? (
@@ -138,36 +131,11 @@ function Navbar() {
             </Link>
           </motion.div>
 
-          {/* Usuario (desktop) */}
           {userName ? (
-            <div ref={dropdownRef} className="nav-item position-relative d-none d-lg-block">
-             <div
-  className="nav-link dropdown-toggle d-flex align-items-center gap-1"
-  role="button"
-  onClick={() => setShowDropdown(prev => !prev)}
->
-  <FiUser size={18} />
-  <span>{userName}</span>
-</div>
-              <AnimatePresence>
-                {showDropdown && (
-                  <motion.ul
-                    className="dropdown-menu dropdown-menu-end show"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    style={{ display: 'block', position: 'absolute', right: 0 }}
-                  >
-                    <li><Link className="dropdown-item" to="/profile">Perfil</Link></li>
-                    <li><Link className="dropdown-item" to="/addresses">Direcciones</Link></li>
-                    <li><Link className="dropdown-item" to="/orders">Pedidos</Link></li>
-                    <li><Link className="dropdown-item" to="/payments">Métodos de pago</Link></li>
-                    <li><button className="dropdown-item text-danger" onClick={handleLogout}>Cerrar sesión</button></li>
-                  </motion.ul>
-                )}
-              </AnimatePresence>
-            </div>
+            <Link className="nav-link d-none d-lg-block d-flex align-items-center gap-1" to="/profile">
+              <FiUser size={18} />
+              <span>{userName}</span>
+            </Link>
           ) : (
             <Link className="nav-link d-none d-lg-block" to="/login">Login</Link>
           )}
@@ -180,7 +148,6 @@ function Navbar() {
           </button>
         </div>
       </div>
-
 
       <AnimatePresence>
         {showMobileMenu && (
@@ -206,7 +173,6 @@ function Navbar() {
               </li>
               <li><Link className="nav-link" to="/guides">Guías</Link></li>
               <li><Link className="nav-link" to="/us">Nosotros</Link></li>
-
               {userName ? (
                 <>
                   <li><Link className="nav-link" to="/profile">Perfil</Link></li>

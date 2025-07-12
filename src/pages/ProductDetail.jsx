@@ -31,8 +31,7 @@ function ProductDetail() {
           <img
             src={`/images/${product.imagen}`}
             alt={product.nombre}
-            className="img-fluid rounded"
-            style={{ maxHeight: '500px', objectFit: 'cover' }}
+            className="img-fluid product-image"
           />
         </div>
 
@@ -50,19 +49,13 @@ function ProductDetail() {
             </div>
 
             {/* CONTADOR */}
-            <div className="d-flex align-items-center gap-3 my-4">
-              <button className="btn btn-outline-secondary" onClick={decrement}>−</button>
-              <input
-                type="text"
-                className="form-control text-center"
-                value={quantity}
-                readOnly
-                style={{ width: '60px' }}
-              />
-              <button className="btn btn-outline-secondary" onClick={increment}>+</button>
+            <div className="quantity-control">
+              <button onClick={decrement}>−</button>
+              <input type="text" value={quantity} readOnly />
+              <button onClick={increment}>+</button>
             </div>
 
-            <div className="d-flex gap-3">
+            <div className="d-flex flex-wrap gap-3">
               <button className="btn btn-primary-green" onClick={handleAddToCart}>
                 Agregar al carrito
               </button>
@@ -70,18 +63,16 @@ function ProductDetail() {
             </div>
 
             {showToast && (
-              <div
-                className="alert alert-success mt-4 animate__animated animate__fadeInDown"
-                role="alert"
-              >
+              <div className="alert alert-success mt-4 animate__animated animate__fadeInDown">
                 Producto agregado al carrito ✅
               </div>
             )}
           </div>
 
+          {/* Métodos de pago */}
           <div className="mt-4">
             <p className="small text-muted">Pagos seguros con múltiples opciones</p>
-            <div className="d-flex gap-3 align-items-center">
+            <div className="payment-icons d-flex gap-3 align-items-center">
               <img src="/icons/mastercard.svg" alt="mastercard" width="40" />
               <img src="/icons/visa.svg" alt="visa" width="40" />
               <img src="/icons/oca.svg" alt="oca" width="40" />
